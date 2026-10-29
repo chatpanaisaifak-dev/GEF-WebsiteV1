@@ -1,0 +1,332 @@
+/* =========================================
+   CONTACT PAGE - GEF PREMIUM LAYOUT
+========================================= */
+
+:root {
+    --contact-red: #187a07;
+    --contact-red-dark: #135705;
+    --contact-black: #135705;
+    --contact-text: #181818;
+    --contact-muted: #777777;
+    --contact-line: #e7e7e7;
+    --contact-soft-red: #edf8eb;
+}
+
+/* Navbar ของหน้า Contact เป็นพื้นขาวเหมือนภาพตัวอย่าง */
+.contact-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    background: #fff;
+    padding: 18px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.contact-navbar .nav-container {
+    min-height: 52px;
+}
+
+.contact-navbar .logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    line-height: 1;
+}
+
+.contact-navbar .logo-text {
+    display: block;
+    white-space: nowrap;
+}
+
+.contact-navbar .nav-menu {
+    margin-left: auto;
+}
+
+.contact-navbar .nav-menu li a {
+    color: var(--contact-black);
+}
+
+.contact-navbar .nav-menu li a:hover,
+.contact-navbar .nav-menu li a.active {
+    color: var(--contact-red);
+}
+
+.contact-navbar .nav-menu li a.active {
+    position: relative;
+}
+
+.contact-navbar .nav-menu li a.active::after {
+    position: absolute;
+    right: 0;
+    bottom: -20px;
+    left: 0;
+    height: 3px;
+    background: var(--contact-red);
+    content: "";
+}
+
+.contact-navbar .dropdown-menu li a {
+    color: var(--contact-text);
+}
+
+.contact-page {
+    min-height: calc(100vh - 86px);
+    padding: 142px 0 70px;
+    background: #fff;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.16fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-panel {
+    border: 1px solid var(--contact-line);
+    background: #fff;
+}
+
+.contact-info-panel,
+.contact-form-panel {
+    padding: 38px 40px;
+}
+
+.section-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--contact-red);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.section-kicker::before {
+    width: 22px;
+    height: 1px;
+    background: var(--contact-red);
+    content: "";
+}
+
+.contact-info-panel h1 {
+    margin-bottom: 14px;
+    color: var(--contact-text);
+    font-size: clamp(1.8rem, 3vw, 2.35rem);
+    font-weight: 600;
+}
+
+.contact-info-panel h2 {
+    margin-bottom: 2px;
+    color: var(--contact-text);
+    font-size: 1.05rem;
+}
+
+.company-name {
+    margin-bottom: 30px;
+    color: var(--contact-muted);
+    font-size: 0.85rem;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-item:hover strong {
+    color: var(--contact-red);
+}
+
+.contact-icon {
+    display: inline-flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--contact-soft-red);
+    color: var(--contact-red);
+    font-size: 1.05rem;
+}
+
+.contact-item small {
+    display: block;
+    margin-bottom: 3px;
+    color: #999;
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--contact-text);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+}
+
+.contact-item-address {
+    align-items: flex-start;
+}
+
+.opening-hours {
+    min-height: 110px;
+    padding: 30px 34px;
+    background: var(--contact-black);
+    color: #fff;
+}
+
+.opening-hours .section-kicker {
+    margin-bottom: 14px;
+}
+
+.opening-hours p {
+    margin: 0;
+    color: #fff;
+    font-size: 0.98rem;
+}
+
+.contact-form-panel h2 {
+    margin-bottom: 36px;
+    color: var(--contact-text);
+    font-size: clamp(1.8rem, 3vw, 2.35rem);
+    font-weight: 600;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-field label {
+    color: #666;
+    font-size: 0.78rem;
+}
+
+.form-field label span {
+    color: var(--contact-red);
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid #e9e9e9;
+    border-radius: 0;
+    outline: none;
+    background: #fcfcfc;
+    color: var(--contact-text);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input {
+    height: 51px;
+    padding: 0 15px;
+}
+
+.form-field textarea {
+    min-height: 155px;
+    padding: 14px 15px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--contact-red);
+    box-shadow: 0 0 0 3px rgba(24, 122, 7, 0.12);
+}
+
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 0;
+    background: var(--contact-red);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-submit:hover {
+    background: var(--contact-red-dark);
+}
+
+.contact-submit:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-navbar {
+        position: fixed;
+        padding: 15px 0;
+    }
+
+    .contact-navbar .nav-menu li a.active::after {
+        display: none;
+    }
+
+    .contact-page {
+        padding-top: 112px;
+    }
+
+    .contact-info-panel,
+    .contact-form-panel {
+        padding: 28px 22px;
+    }
+}
+
+@media (max-width: 520px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .opening-hours {
+        padding: 26px 22px;
+    }
+}

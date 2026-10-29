@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEF-Thailand</title>
+    <meta name="description" content="GEF-Thailand | THE FUTURE OF COMMERCIAL BLENDERS">
+    <meta property="og:siteName" content="GEF-Thailand">
+    <meta property="og:locale" content="th_TH">
+    <meta property="og:url" content="https://gef-thailand.com/">
+    <meta property="og:title" content="GEF-Thailand">
+    <meta property="og:description" content="GEF-Thailand | THE FUTURE OF COMMERCIAL BLENDERS">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style-lightv2.css">
+    <link rel="icon" type="image/jpg" href="media\image\favicon.jpg">
+</head>
+<body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">GEF</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <!-- ปุ่มเปิดเมนูสินค้า -->
+                    <a href="#products" class="products-trigger" aria-expanded="false">
+                        สินค้า
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+
+                    <!-- รายการแบรนด์ -->
+                    <ul class="dropdown-menu">
+
+                        <!-- แบรนด์ HURACAN -->
+                        <li class="dropdown-submenu">
+
+                            <a href="#" class="brand-trigger" aria-expanded="false">
+                                HURACAN
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+
+                            <!-- รุ่นในแบรนด์ HURACAN -->
+                            <ul class="brand-menu">
+                                <li>
+                                    <a href="#product-k9pro">
+                                        K9 PRO
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <!-- แบรนด์ GEF -->
+                        <li class="dropdown-submenu">
+
+                            <a href="#" class="brand-trigger" aria-expanded="false">
+                                GEF
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+
+                            <!-- รุ่นในแบรนด์ GEF -->
+                            <ul class="brand-menu">
+                                <li>
+                                    <a href="#product-a9plus">
+                                        A9 PLUS
+                                    </a>
+                                    <a href="#product-s9pro">
+                                        S9 PRO
+                                    </a>
+                                    <a href="#product-v3pro">
+                                        V3 PRO
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </li>
+                <li><a href="Contact.html">ติดต่อเรา</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-carousel">
+            <!-- Slide 1: Video -->
+            <div class="slide active">
+                <video autoplay muted loop class="hero-media">
+                    <source src="media\video\SMT01.mp4" type="video/mp4">
+                </video>
+                <!--<div class="hero-media" style="background-image: url('main.jpg'); background-size: cover; background-position: center;"></div>-->
+                <div class="hero-content">
+                    <h1 class="hero-title">THE FUTURE OF COMMERCIAL BLENDERS</h1>
+                    <p class="hero-subtitle">สัมผัสประสบการณ์การปั่นระดับพรีเมียม ด้วยพลังและเทคโนโลยีล้ำสมัยจาก GEF</p>
+                    <a href="#product-a9plus" class="btn btn-primary">รายละเอียดเพิ่มเติม</a>
+                    <!--<a href="product.html" class="btn btn-primary">ดูสินค้าทั้งหมด</a>-->
+                </div>
+            </div>
+            <!-- Slide 2: Image K9PRO -->
+            <div class="slide">
+                <video autoplay muted loop class="hero-media">
+                    <source src="media\video\เครื่องปั่น Huracan.mov" type="video/mp4">
+                </video>
+                <div class="hero-content">
+                    <h1 class="hero-title">Huracan K9 PRO</h1>
+                    <p class="hero-subtitle">พลัง 300W เงียบกว่า ทนทานกว่า ตอบโจทย์ทุกธุรกิจเครื่องดื่ม</p>
+                    <a href="#product-k9pro" class="btn btn-primary">รายละเอียดเพิ่มเติม</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button id="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button id="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </header>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            
+            <div class="modal-body">
+                <!-- Left: Image -->
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product Image">
+                </div>
+                
+                <!-- Right: Details -->
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <h3 id="modalSubtitle"></h3>
+                    
+                    <p id="modalDescription"></p>
+                    
+                    <div class="modal-features">
+                        <h4>คุณสมบัติ:</h4>
+                        <ul id="modalFeatures"></ul>
+                    </div>
+                    
+                    <div class="modal-specs">
+                        <h4>ข้อมูลจำเพาะ:</h4>
+                        <div id="modalSpecs"></div>
+                    </div>
+                    
+                    <div class="modal-price">
+                        <span>ราคา: </span>
+                        <span id="modalPrice" class="price"></span>
+                    </div>
+                    
+                    <a href="https://page.line.me/992smxye?openQrModal=true" target="_blank" rel="noopener noreferrer" class="btn btn-primary">ติดต่อสั่งซื้อ</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Notification Modal -->
+    <div id="notificationModal" class="notification-modal">
+        <div class="notification-content">
+            <h3 id="notificationTitle">ขอบคุณที่สนใจ!</h3>
+            <p id="notificationMessage">สินค้าจะส่งให้เร็วๆ นี้</p>
+            <button class="notification-btn" onclick="closeNotification()">ปิด</button>
+        </div>
+    </div>
+
+    <!-- 3. Feature Highlight Sections -->
+    <section id="products" class="features">
+        <!-- Feature 1: K9 PRO -->
+        <div id="product-k9pro" class="feature-row fade-in">
+            <div class="feature-image">
+                <img src="media\image\K9_Pro.png" alt="Huracan K9 PRO Blender">
+            </div>
+            <div class="feature-text">
+                <h2>Huracan K9 PRO</h2>
+                <h3>สุดยอดเครื่องปั่นสำหรับมืออาชีพ</h3>
+                <p>รองรับการปั่นหนักๆได้ตลอดทั้งวัน ด้วยมอเตอร์ระบบ DC ที่ให้รอบปั่นสูง ปั่นเร็ว ปั่นแรง ปั่นละเอียด เสียงเบา มาพร้อม Soundproof Cover ลดเสียงรบกวน และระบบออโต้ใช้งานได้สะดวกยิ่งขึ้น</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> มอเตอร์ DC ทนทาน ความเร็วสูง ไม่สะสมความร้อน</li>
+                    <li><i class="fas fa-check-circle"></i> ใบมีด 6 แฉก SUS304 Stainless Steel Blade ทนทาน ไม่เป็นสนิม</li>
+                    <li><i class="fas fa-check-circle"></i> ปรับความแรงได้ 8 ระดับ พร้อมปุ่มกระแทกน้ำแข็ง</li>
+                </ul>
+                <button onclick="openModal('k9pro')" class="btn btn-outline">ดูข้อมูลเพิ่มเติม</button>
+            </div>
+        </div>
+
+        <!-- Feature 2: A9 PLUS -->
+        <div id="product-a9plus" class="feature-row reverse fade-in">
+            <div class="feature-image">
+                <img src="media\image\GEF_A9_Plus.png" alt="GEF A9 PLUS Blender">
+            </div>
+            <div class="feature-text">
+                <h2>GEF A9 PLUS</h2>
+                <h3>ความสมบูรณ์แบบที่ปรับแต่งได้</h3>
+                <p>ควบคุมทุกการปั่นด้วยแผงควบคุมดิจิทัลอัจฉริยะ ให้คุณตั้งโปรแกรมการทำงานได้อย่างอิสระ เพื่อให้ได้เนื้อสัมผัสที่สมบูรณ์แบบในทุกแก้ว</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> อายุการใช้งานมอเตอร์นานกว่านานกว่ามอเตอร์ซีรี่ย์ทั่วไปถึง 10 เท่า </li>
+                    <li><i class="fas fa-check-circle"></i> เทคโนโลยีออกแบบเครื่อง ป้องกันน้ำและความชื้น </li>
+                    <li><i class="fas fa-check-circle"></i> ใช้งานง่ายด้วยปุ่มกดแบบอัตโนมัติ และมีโปรแกรมปรับแต่ง DIY </li>
+                </ul>
+                <button onclick="openModal('a9plus')" class="btn btn-outline">ดูข้อมูลเพิ่มเติม</button>
+            </div>
+        </div>
+
+        <!-- Feature 3: S9 PRO -->
+        <div id="product-s9pro" class="feature-row fade-in">
+            <div class="feature-image">
+                <img src="media\image\K9_Pro.png" alt="Huracan K9 PRO Blender">
+            </div>
+            <div class="feature-text">
+                <h2>GEF S9 PRO</h2>
+                <h3>สุดยอดเครื่องปั่นสำหรับมืออาชีพ</h3>
+                <p>ใช้พื้นที่บาร์อย่างคุ้มค่า ออกแบบโดยคำนึงถึงความกะทัดรัดของพื้นที่โดยรวม
+                เครื่องปั่นสมูทตี้ที่เหมาะกับร้านกาแฟและชา ปั่นได้ตั้งแต่เช้าจรดค่ำ</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> มอเตอร์ DC ทนทาน ความเร็วสูง ไม่สะสมความร้อน</li>
+                    <li><i class="fas fa-check-circle"></i> เทคโนโลยีซีลจดสิทธิบัตร กันน้ำและกันความชื้นทั้งตัวเครื่อง</li>
+                    <li><i class="fas fa-check-circle"></i> ระบบชิปประมวลผลทรงพลัง ตั้งค่าเองได้ตามต้องการ</li>
+                </ul>
+                <button onclick="openModal('s9pro')" class="btn btn-outline">ดูข้อมูลเพิ่มเติม</button>
+            </div>
+        </div>
+
+        <!-- Feature 4: V3 PRO -->
+        <div id="product-v3pro" class="feature-row reverse fade-in">
+            <div class="feature-image">
+                <img src="media\image\GEF_A9_Plus.png" alt="GEF S9Pro Blender">
+            </div>
+            <div class="feature-text">
+                <h2>GEF V3 PRO</h2>
+                <h3>ปั่นได้ตลอดทั้งวันไม่ต้องพัก</h3>
+                <p>เครื่องปั่นเชิงพาณิชย์ที่ออกแบบมาเพื่อเครื่องดื่มยุคใหม่โดยเฉพาะ เพิ่มประสิทธิภาพการทำงานหน้าร้านให้ดียิ่งขึ้นพร้อมความปลอดภัยที่มั่นใจได้</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> ทนทานต่อการใช้งาน ถี่สูงกว่า 300,000 รอบ </li>
+                    <li><i class="fas fa-check-circle"></i> เทคโนโลยีออกแบบเครื่อง ป้องกันน้ำและความชื้น </li>
+                    <li><i class="fas fa-check-circle"></i> โถปั่นทรงดอกเหมย ทำให้วัตถุดิบบดเนียนละเอียดและเข้ากันสม่ำเสมอ </li>
+                </ul>
+                <button onclick="openModal('v3pro')" class="btn btn-outline">ดูข้อมูลเพิ่มเติม</button>
+            </div>
+        </div>
+    </section>
+
+   <!-- 4. About Us -->
+    <section class="about">
+        <div id= "about-company" class="container about-container">
+            <!-- Left: Text Content -->
+            <div class="about-content">
+                <h2>เกี่ยวกับเรา</h2>
+                <h3>GEF - ผู้นำด้านนวัตกรรมเครื่องปั่น</h3>
+            
+                <p>บริษัท GEF ผู้นำในการสร้างสรรค์เครื่องปั่นสำหรับอุตสาหกรรมเครื่องดื่ม ด้วยประสบการณ์กว่า 20 ปี เรามุ่งมั่นในการสร้างสินค้าที่มีคุณภาพสูงและเทคโนโลยีล้ำสมัย</p>
+            
+                <p>ผลิตภัณฑ์ของเรา ได้รับการยอมรับจากผู้ประกอบการทั่วประเทศ และเป็นที่เชื่อถือของลูกค้าในด้านความทนทาน ประสิทธิภาพ และการบริการหลังการขาย</p>
+            
+            </div>
+        
+            <!-- Right: Image -->
+            <div class="about-image-content">
+                <img src="media\image\cert.jpg" alt="Certificate">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Trust Badges -->
+    <section class="trust-badges">
+        <div class="container badges-grid fade-in">
+            <div class="badge-item">
+                <i class="fas fa-truck-fast"></i>
+                <h4>จัดส่งฟรี</h4>
+                <p>เมื่อสั่งซื้อตามเงื่อนไข</p>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-shield-halved"></i>
+                <h4>รับประกัน 1 ปี</h4>
+                <p>มั่นใจในคุณภาพและบริการ</p>
+            </div>
+            <div class="badge-item">
+                <i class="fas fa-phone"></i>
+                <h4>บริการหลังการขาย</h4>
+                <p>พร้อมให้คำปรึกษาตลอด 24 ชม.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Video Section -->
+    <section class="video-section fade-in">
+        <div class="container">
+            <h2 class="section-title">สัมผัสพลังแห่ง GEF</h2>
+            <div class="video-container">
+                <!-- Example YouTube Embed -->
+                <iframe width="540" height="960" src="media\video\A9 plus.mp4" title="A9 Plus Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Find Locations -->
+    <section id = "locations" class="locations fade-in">
+        <div class="container">
+            <div class="location-header">
+                <h2>เลือกสาขาใกล้บ้านคุณ</h2>
+            </div>
+        
+        <div class="locations-grid">
+            <!-- Branch 1: Chonburi -->
+            <div class="location-card">
+                <div class="location-info">
+                    <h3>สาขาชลบุรี (สำนักงานใหญ่)</h3>
+                    <p><i class="fas fa-map-marker-alt"></i>  บริษัทหอมไกล ชลบุรี จำกัด 1/47 ม.3 ต.เสม็ด อ.เมืองชลบุรี ชลบุรี 20000</p>
+                    <p><i class="fas fa-phone"></i> 061-771-1139</p>
+                    <p><i class="fas fa-clock"></i> จันทร์-อาทิตย์ 8:30-18:00</p>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.472486818005!2d100.94368217484785!3d13.320858887027574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d4adb40decf41%3A0xedf6b9d2ca47354a!2z4Liu4Li04Lil4Lil4LmM4LiE4Lit4Lif4Lif4LmMIOC4quC4suC4guC4suC4iuC4peC4muC4uOC4o-C4tSAoIOC4o-C5ieC4suC4meC4q-C4reC4oeC5hOC4geC4pSDguIrguKXguJrguLjguKPguLUgKQ!5e0!3m2!1sen!2sth!4v1785304445216!5m2!1sen!2sth" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+
+            <!-- Branch 2: Pattaya -->
+            <div class="location-card">
+                <div class="location-info">
+                    <h3>สาขาพัทยา</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> เมืองพัทยา อ.บางละมุง ชลบุรี 20150</p>
+                    <p><i class="fas fa-phone"></i> 062-259-6950</p>
+                    <p><i class="fas fa-clock"></i> จันทร์-เสาร์ 08:30-18:00 | หยุดวันอาทิตย์</p>
+                </div>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.782481372273!2d100.8955107748405!3d12.921697387389106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310295425b1fb4fb%3A0xff858caf711358b1!2z4Lij4LmJ4Liy4LiZ4Lir4Lit4Lih4LmE4LiB4Lil4Lie4Lix4LiX4Lii4LiyIChIaWxsa29mZiBIb21nbGFpIFBhdHRheWEp!5e0!3m2!1sen!2sth!4v1785305918090!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- 8. Review/Gallery Section -->
+    <section id="reviews" class="gallery fade-in">
+        <div class="container">
+            <h2 class="section-title">ความไว้วางใจจากลูกค้า</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="media\image\196CCC7C-DE51-40F7-8FE0-A8A8CFC6867A.jpg" alt="Gallery 1"></div>
+                <div class="gallery-item"><img src="media\image\4C62E4EF-858E-4EB6-ACBF-0D9BD97AEB7D.jpg" alt="Gallery 2"></div>
+                <!--<div class="gallery-item"><img src="assets/gallery3.jpg" alt="Gallery 3"></div>
+                <div class="gallery-item"><img src="assets/gallery4.jpg" alt="Gallery 4"></div>
+                <div class="gallery-item"><img src="assets/gallery5.jpg" alt="Gallery 5"></div>
+                <div class="gallery-item"><img src="assets/gallery6.jpg" alt="Gallery 6"></div>-->
+            </div>
+            <!--<div class="text-center" style="margin-top: 30px;">
+                <a href="#" class="btn btn-outline">ดูผลงานเพิ่มเติม</a>
+            </div>-->
+        </div>
+    </section>
+
+    <!-- 9. News/Information Center 
+    <section id = "news" class="news fade-in">
+        <div class="container">
+            <h2 class="section-title">ข่าวสารและกิจกรรม</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('assets/news1.jpg');"></div>
+                    <div class="news-content">
+                        <span class="news-date">28 กรกฎาคม 2026</span>
+                        <h3>เปิดตัว Huracan K9 PRO รุ่นใหม่ล่าสุด</h3>
+                        <p>สัมผัสประสบการณ์การปั่นระดับพรีเมียม กับนวัตกรรมใหม่ที่ตอบโจทย์ทุกความต้องการของบาร์เครื่องดื่ม...</p>
+                        <a href="#" class="read-more">อ่านต่อ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('assets/news2.jpg');"></div>
+                    <div class="news-content">
+                        <span class="news-date">15 มิถุนายน 2026</span>
+                        <h3>เคล็ดลับการดูแลรักษาเครื่องปั่นเชิงพาณิชย์</h3>
+                        <p>ยืดอายุการใช้งานเครื่องปั่นคู่ใจของคุณด้วยวิธีง่ายๆ ที่สามารถทำได้ด้วยตัวเองทุกวัน...</p>
+                        <a href="#" class="read-more">อ่านต่อ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('assets/news3.jpg');"></div>
+                    <div class="news-content">
+                        <span class="news-date">2 พฤษภาคม 2026</span>
+                        <h3>GEF ร่วมงานแสดงสินค้าอาหารและเครื่องดื่ม</h3>
+                        <p>พบกับบูธของ GEF พร้อมโปรโมชั่นพิเศษมากมายในงานแสดงสินค้าอาหารและเครื่องดื่มระดับนานาชาติ...</p>
+                        <a href="#" class="read-more">อ่านต่อ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- 10. Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <h2 class="footer-logo">GEF</h2>
+                <p>นวัตกรรมเครื่องจักรสำหรับอุตสาหกรรมเครื่องดื่มระดับพรีเมียม ที่ผู้เชี่ยวชาญไว้วางใจ</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/GEFThailand/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://page.line.me/992smxye?openQrModal=true" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-line"></i>
+                    </a>
+                    <!--<a href="#" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-youtube"></i>-->
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>เกี่ยวกับเรา</h3>
+                <ul>
+                    <li><a href="#about-company">ประวัติบริษัท</a></li>
+                    <li><a href="#locations">สาขาทั้งหมด</a></li>
+                    <li><a href="#reviews">ความไว้วางใจจากลูกค้า</a></li>
+                    <li><a href="#news">ข่าวสารและกิจกรรม</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>สินค้า</h3>
+                <ul>
+                    <li><a href="#product-k9pro">Huracan K9 PRO</a></li>
+                    <li><a href="#product-a9plus">GEF A9 PLUS</a></li>
+                    <li><a href="#product-s9pro">GEF S9 PRO</a></li>
+                    <li><a href="#product-v3pro">GEF V3 PRO</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3>ติดต่อเรา</h3>
+                <p><i class="fas fa-clock"></i> จันทร์ - อาทิตย์: 08:30 - 18:00 น.</p>
+                <p><i class="fas fa-envelope"></i> homglaigroup@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 061-771-1139</p>
+                <p><i class="fas fa-map-marker-alt"></i> บริษัทหอมไกล ชลบุรี จำกัด 1/47 ม.3 ต.เสม็ด อ.เมืองชลบุรี ชลบุรี 20000</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 GEF · บริษัท หอมไกล ชลบุรี จำกัด · All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
